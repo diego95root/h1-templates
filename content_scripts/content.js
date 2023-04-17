@@ -1,25 +1,15 @@
-document.addEventListener('readystatechange', function (event) {
-    if (event.target.readyState === 'complete') {
-        const observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutation) {
-                if (mutation.type === 'childList') {
-                    mutation.addedNodes.forEach(function (node) {
-                        if (
-                            node.classList &&
-                            node.classList.contains('daisy-grid')
-                        ) {
-                            observer.disconnect();
-                            addReportElement(node);
-                        }
-                    });
-                }
-            });
+const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+        mutation.addedNodes.forEach(function (node) {
+            if (node.classList && node.classList.contains('daisy-grid')) {
+                addReportElement(node);
+            }
         });
-        observer.observe(document.documentElement, {
-            childList: true,
-            subtree: true,
-        });
-    }
+    });
+});
+observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
 });
 
 function createTemplateBtn(report) {
@@ -45,7 +35,6 @@ function createTemplateBtn(report) {
         });
 
         let parsedReport = parseMarkdown(report.content);
-        console.log(parsedReport);
 
         setKeywordText('', '#report_title');
         setKeywordText('', '#report_vulnerability_information');
@@ -56,7 +45,6 @@ function createTemplateBtn(report) {
             } else if (section.name == 'Title') {
                 setKeywordText(section.content.trim(), '#report_title');
             } else if (section.name == 'Severity') {
-                console.log(`button[value="${section.content.trim()}"]`);
                 document
                     .querySelector(
                         `.spec-rating-${section.content.trim().toLowerCase()}`
@@ -168,7 +156,6 @@ function addReportElement(timeline) {
                 reader.onload = () => {
                     const content = reader.result;
                     // Do something with the file content
-                    console.log(content);
                     const report = {
                         fileName: file.name.replace(/\.md$/, ''),
                         content: content,

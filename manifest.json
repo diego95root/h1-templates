@@ -1,14 +1,13 @@
 {
     "manifest_version": 2,
     "name": "H1 Templates",
-    "profile": "/home/diego/.mozilla/firefox/4xbv871k.web-ext-test",
     "version": "1.0",
     "description": "Augment your H1 report experience by saving report templates in your browser and automatically filling in the reports for you!",
     "permissions": [],
     "content_scripts": [
         {
-            "matches": ["https://hackerone.com/*/reports/new*"],
-            "js": ["content.js"],
+            "matches": ["https://hackerone.com/*"],
+            "js": ["content_scripts/content.js"],
             "run_at": "document_start"
         }
     ]
