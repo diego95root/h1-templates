@@ -6,9 +6,8 @@ HackerOne Templates is a browser extension that enhances the reporting experienc
 
 1. Download the latest release of the extension from the [releases page](https://github.com/diego95root/h1-templates/releases).
 2. Extract the downloaded archive.
-3. Open Firefox and navigate to `about:debugging`.
-4. Click the "This Firefox" tab, then click the "Load Temporary Add-on" button.
-5. In the file dialog, select the `manifest.json` file from the extracted archive.
+3. Open Chrome and navigate to `about:extensions`.
+4. Select the directory to load the extension.
 
 ## Usage
 
@@ -17,6 +16,10 @@ Once installed, the extension will automatically activate on the "New Report" pa
 -   A button to upload a report template in Markdown format.
 -   A dropdown menu with pre-made templates that can be inserted into the report.
 -   A button to clear the entire report form.
+
+## Example report templates
+
+Sample reports can be found in the `samples/` directory.
 
 ## Contributing
 
