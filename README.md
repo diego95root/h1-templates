@@ -11,10 +11,7 @@ HackerOne Templates is a browser extension that enhances the reporting experienc
 
 ## Installation - Firefox
 
-1. Download the latest release of the extension from the [releases page](https://github.com/diego95root/h1-templates/releases).
-2. Visit `about:debugging#/runtime/this-firefox`
-3. Click on `Load Temporary Add-On`
-4. Select the `web-ext-artifacts/h1_templates-1.0.xpi`.
+1. Install it from the official Mozilla addons store at https://addons.mozilla.org/en-US/firefox/addon/h1-templates/
 
 ## Usage
 
